@@ -30,7 +30,7 @@ public class Q4_Med3 {
 		System.out.println("med3(3, 2, 3) = " + med3(3, 2, 3));	// a=c>b
 		System.out.println("med3(2, 1, 3) = " + med3(2, 1, 3));	// c>a>b
 		System.out.println("med3(1, 2, 3) = " + med3(1, 2, 3));	// c>b>a
-		System.out.println("med3(2, 3, 3) = " + med3(2, 3, 2));	// c=b>a
+		System.out.println("med3(2, 3, 3) = " + med3(2, 3, 3));	// c=b>a
 		System.out.println("med3(3, 3, 2) = " + med3(3, 3, 2));	// a=b>c
 		System.out.println("med3(3, 3, 3) = " + med3(3, 3, 2)); // a=b=c
 		System.out.println("med3(2, 2, 3) = " + med3(2, 2, 3));	// c>a=b
