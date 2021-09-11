@@ -10,23 +10,20 @@ public class Q11_DigitsNo {
 
 	public static void main(String[] args) {
 		Scanner stdIn = new Scanner(System.in);
-		int no;
+		int num;
 		
 		do {
-			System.out.print("양의 정수를 입력: ");
-			no = stdIn.nextInt();
-		} while (no <= 0);
+			System.out.print("양의 정수값：");
+			num = stdIn.nextInt();
+		} while (num <= 0);
 		
-		if(no / 10 < 1) {
-			System.out.println("그 수는 1자리입니다.");
-		} else if(no / 100 < 1) {
-			System.out.println("그 수는 2자리입니다.");
-		} else if(no / 1000 < 1) {
-			System.out.println("그 수는 3자리입니다.");
-		} else if(no / 10000 < 1) {
-			System.out.println("그 수는 4자리입니다.");
-		} else if(no / 100000 < 1) {
-			System.out.println("그 수는 5자리입니다.");
+		int cnt = 0;
+		
+		while(num / 10 != 0) {
+			cnt++;
+			num /= 10;
 		}
+		
+		System.out.println("그 수는 " + (cnt + 1) + "자리입니다.");
 	}
 }
