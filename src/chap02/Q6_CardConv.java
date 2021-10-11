@@ -1,10 +1,11 @@
 package chap02;
 import java.util.Scanner;
-// 입력 받은 10진수를 2진수 ~ 36진수로 기수 변환하여 나타냄
+//입력 받은 10진수를 2진수 ~ 36진수로 기수 변환하여 나타냄
+//배열의 앞쪽에 아랫자리가 아닌 윗자리를 넣어두는 메소드
 
-public class CardConvRev {
+public class Q6_CardConv {
 	// 정숫값 x를 r진수로 변환하여 배열 d에 아랫자리부터 넣어두고 자릿수를 반환
-	static int cardConvR(int x, int r, char[] d) {
+	static int cardConv(int x, int r, char[] d) {
 		int digits = 0;
 		String dchar = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		
@@ -12,6 +13,13 @@ public class CardConvRev {
 			d[digits++] = dchar.charAt(x % r);
 			x /= r;
 		} while (x != 0);
+		
+		for(int i=0; i < digits / 2; i++) {
+			char temp = d[i];
+			d[i] = d[digits - i - 1];
+			d[digits - i - 1] = temp;
+		}
+			
 		return digits;
 	}
 	
@@ -35,10 +43,10 @@ public class CardConvRev {
 				cd = stdIn.nextInt();
 			} while(cd < 2 || cd > 30);
 			
-			dno = cardConvR(no, cd, cno);		// no를 cd진수로 변환
+			dno = cardConv(no, cd, cno);		// no를 cd진수로 변환
 			
 			System.out.println(cd + "진수로는 ");
-			for(int i = dno-1; i>=0; i--) {		// 윗자리부터 차례로 나타냄
+			for(int i=dno-1; i>=0; i--) {		// 윗자리부터 차례로 나타냄
 				System.out.print(cno[i]);
 			}
 			System.out.println("입니다");
